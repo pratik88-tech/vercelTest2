@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  allPost:any=[]
+  // allPost:any=[]
+  message:any=null;
   constructor(private http:HttpClient){}
   ngOnInit(): void {
-    this.http.get("https://jsonplaceholder.typicode.com/posts").subscribe(res=>{
-      this.allPost=res
+    this.http.get("https://vercel-express-8de2.vercel.app/").subscribe(res=>{
+      this.message=res
       // console.log(res)
     })
   }
