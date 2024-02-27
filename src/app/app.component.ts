@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { TestService } from './services/test.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // allPost:any=[]
-  message:any=null;
-  constructor(private http:HttpClient){}
+  data:any=null;
+  constructor(private testService:TestService){}
   ngOnInit(): void {
-    this.http.get("https://vercel-express-8de2.vercel.app/").subscribe(res=>{
-      this.message=res
-      // console.log(res)
+    this.testService.getData().subscribe(res=>{
+      this.data=res
     })
   }
-  title = 'vercelTest2';
 }
