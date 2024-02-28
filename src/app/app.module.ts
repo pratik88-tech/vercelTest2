@@ -8,6 +8,7 @@ import { AppInterceptor } from './app.interceptor';
 import { HeaderComponent } from './common/header/header.component';
 import { NoteListComponent } from './components/note-list/note-list.component';
 import { AddNoteComponent } from './components/add-note/add-note.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,8 @@ import { AddNoteComponent } from './components/add-note/add-note.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }],
   bootstrap: [AppComponent]

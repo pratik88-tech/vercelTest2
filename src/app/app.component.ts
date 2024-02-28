@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TestService } from './services/test.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,8 @@ import { TestService } from './services/test.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  data:any=null;
-  constructor(private testService:TestService){}
+  constructor(){}
   ngOnInit(): void {
-    this.testService.getData().subscribe(res=>{
-      this.data=res
-    })
+
   }
 }
