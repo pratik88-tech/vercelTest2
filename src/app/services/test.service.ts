@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class TestService {
   // private URL="https://vercel-express-8de2.vercel.app/";
-  // private URL = "https://note-api-jet.vercel.app/notes/";
-  private URL = "http://localhost:5000/notes/";
+  private URL = "https://note-api-jet.vercel.app/notes/";
+  // private URL = "http://localhost:5000/notes/";
   headers: HttpHeaders = new HttpHeaders();
   constructor(private http: HttpClient) { }
   getData() {
@@ -21,7 +21,7 @@ export class TestService {
   }
 
   postFile(payload,fileToUpload: File){
-    const endpoint = 'http://localhost:5000/notes/';
+    const endpoint = this.URL;
     const formData: FormData = new FormData();
     formData.append('title',payload.title);
     formData.append('description', payload.description);
